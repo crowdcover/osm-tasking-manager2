@@ -475,9 +475,10 @@ osmtm.project = (function() {
           break;
         }
         url = getLink({
-          base: 'http://www.openstreetmap.org/edit?editor=id&',
+          base: 'http://45.55.129.242/iD/',
           bounds: task_bounds,
-          centroid: task_centroid,
+          // centroid: task_centroid,
+          centroid: [task_centroid[1], task_centroid[0]],
           protocol: 'id'
         });
         url += "&gpx=" + gpx_url;
