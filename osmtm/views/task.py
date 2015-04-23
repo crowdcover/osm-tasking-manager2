@@ -472,8 +472,9 @@ def task_assign_delete(request):
 @view_config(route_name='task_gpx', renderer='task.gpx.mako')
 def task_gpx(request):
     task = __get_task(request)
-    request.response.headerlist.append(('Access-Control-Allow-Origin',
-                                        'http://www.openstreetmap.org'))
+    # request.response.headerlist.append(('Access-Control-Allow-Origin',
+    #                                     'http://www.openstreetmap.org'))
+    request.response.headerlist.append(('Access-Control-Allow-Origin','*'))
     return dict(multipolygon=shape.to_shape(task.geometry),
                 project_id=task.project_id)
 
@@ -481,8 +482,9 @@ def task_gpx(request):
 @view_config(route_name='task_osm', renderer='task.osm.mako')
 def task_osm(request):
     task = __get_task(request)
-    request.response.headerlist.append(('Access-Control-Allow-Origin',
-                                        'http://www.openstreetmap.org'))
+    # request.response.headerlist.append(('Access-Control-Allow-Origin',
+    #                                     'http://www.openstreetmap.org'))
+    request.response.headerlist.append(('Access-Control-Allow-Origin','*'))
     return dict(multipolygon=shape.to_shape(task.geometry),
                 project_id=task.project_id)
 
