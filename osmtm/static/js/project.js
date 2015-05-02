@@ -475,7 +475,7 @@ osmtm.project = (function() {
           break;
         }
         url = getLink({
-          base: 'http://45.55.129.242/iD/',
+          base: 'http://id.loggingroads.org/',
           bounds: task_bounds,
           // centroid: task_centroid,
           centroid: [task_centroid[1], task_centroid[0]],
